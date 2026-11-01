@@ -1,11 +1,11 @@
 #  The Game Plan :)
 #
 #      [Winning room] <- [starting room] -> [room 1] -> [room 3] -> [room 4]
-#        x coins]                       |    [test]      [test]
-#           |                           V                  | 
-#           V                        [room 2] -> [room 3]  |
-#       [Final room]                                       V
-#                                                       [room 5]
+#        x coins]                            [test]      [test]
+#           |                                  |           | 
+#           V                                  |           V
+#       [Final room]                           V        [room 5]
+#                                             [room 2]           
 
 import time
 
@@ -26,5 +26,17 @@ while game_running:
         time.sleep(1)
         print("You pick it up and stand up.")
         time.sleep(1)
-        print("In front of you is a massive door, and behind you, a smaller one with [] locks.")
-        time.sleep
+        print("In front of you is a massive doors, and behind you, a smaller one with [] locks.")
+        time.sleep(3)
+        print('If you want to enter the massive doors, enter "1". If you want to try to open the smaller doors, enter "2".')
+
+        answer = input("1-2: ")
+
+        if answer == "1":
+            room = 'room 1'
+        elif answer == "2":
+            room = 'room 2'
+        else:
+            print("Invalid input. Please enter '1' or '2'.")
+    elif room == 'room 1':
+        print("You enter the massive doors and find yourself in a large hall.")
