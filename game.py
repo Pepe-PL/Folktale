@@ -11,6 +11,7 @@ import time
 
 room = 'starting'
 coins = 0
+key_to_room_3 = False
 game_running = True
 while game_running:
     if room == 'starting':
@@ -94,4 +95,34 @@ while game_running:
         else:
             print("Invalid input. Please enter '1', '2', '3', or '4'.")
 
-        
+    elif room == 'room 2':
+
+        print("You enter the doors and find yourself in a small room with a locked chest.")
+        time.sleep(1)
+        print("There is a note on the chest that says: 'If you want to go and to open the chest, you must answer a riddle.'")
+        time.sleep(1)
+        print("The riddle is: 'What can run but never walks, has a mouth but never talks, has a head but never weeps, has a bed but never sleeps?'")
+        print("Write your answer below:")
+
+        room2_answer = input("Enter your answer: ")
+
+        if room2_answer.lower() == "river":
+            print("Correct! The chest opens and you find a key inside.")
+            time.sleep(1)
+            print("You take the key and leave the room.")
+            key_to_room_3 == True
+            room = 'room 1'
+        else:
+            print("Incorrect! You have died instantly.")
+            time.sleep(1)
+            print("Game Over.")
+            time.sleep(1)
+            again = input("Do you want to play again? (yes/no): ")
+            if again.lower() != "yes":
+                coins = 0
+                room = 'starting'
+            else:
+                print("Thx for playing <3")
+
+    elif room == 'room 3':
+        print
