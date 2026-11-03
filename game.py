@@ -18,17 +18,17 @@ game_running = True
 while game_running:
     if room == 'starting':
         print("You have woken up in a strange place...")
-        time.sleep(1)
-        print("You don’t know where you are...")
         time.sleep(2)
-        print("You look around, but you can’t see anything because it’s dark...")
+        print("You dont know where you are...")
         time.sleep(2)
-        print("However, next to the bed you’re in, you spot a light...")
+        print("You look around, but you cant see anything because its dark...")
+        time.sleep(2)
+        print("However, next to the bed youre in, you spot a light...")
         time.sleep(3)
         print("It turns out to be a torch...")
-        time.sleep(1)
+        time.sleep(2)
         print("You pick it up and stand up.")
-        time.sleep(1)
+        time.sleep(2)
         print("In front of you is a massive doors, and behind you, a smaller one with [] locks.")
         time.sleep(3)
         print('If you want to enter the massive doors, enter "1". If you want to try to open the smaller doors, enter "2".')
@@ -38,30 +38,31 @@ while game_running:
         if answer == "1":
             room = 'room 1'
         elif answer == "2":
-            room = 'room 2'
+            room = 'winning room'
         else:
             print("Invalid input. Please enter '1' or '2'.")
     
     elif room == 'room 1':
         
-        time.sleep(1)
+        time.sleep(2)
         print("You enter the massive doors and find yourself in a large hall.")
-        time.sleep(1)
+        time.sleep(2)
         print("There are two doors in front of you, one to the left and one to the right.")
-        time.sleep(1)
+        time.sleep(2)
         print("Also in the room, you see a table with a small machine on it.")
-        time.sleep(1)
+        time.sleep(2)
         print('On the machine there is a note that says: "Win a coin by answering a question correctly. If you answer incorrectly, you will die instantly."')
-        time.sleep(1)
+        print("")
+        time.sleep(2)
         print('If you want to answer the question, enter "1". If you want to go through the left door, enter "2". If you want to go through the right door, enter "3". If you want to turn back and go back to the starting room, enter "4".')
 
         answer = input("1-4: ")
 
         if answer == "1":
             print("You approach the machine and read the question on the screen.")
-            time.sleep(1)
+            time.sleep(2)
             print("The question is: 'What is the capital of Australia?'")
-            time.sleep(1)
+            time.sleep(2)
             print('If you want to answer "Canberra", enter "1".')
             print('If you want to answer "Sydney", enter "2".')
             print('If you want to answer "Melbourne", enter "3".')
@@ -70,16 +71,19 @@ while game_running:
             room1_answer = input("Enter your answer: ")
 
             if room1_answer == "1":
+                print("")
                 print("Correct! You have won a key.")
                 keys += 1
-                time.sleep(1)
+                time.sleep(2)
                 print(f"You now have {keys} key(s).")
+                print("")
 
             elif room1_answer in ["2", "3", "4"]:
+                print("")
                 print("Incorrect! You have died instantly.")
-                time.sleep(1)
+                time.sleep(2)
                 print("Game Over.")
-                time.sleep(1)
+                time.sleep(2)
                 again = input("Do you want to play again? (yes/no): ")
                 if again.lower() != "yes":             
                     keys = 0
@@ -102,25 +106,28 @@ while game_running:
     elif room == 'room 2':
 
         print("You enter the doors and find yourself in a small room with a locked chest.")
-        time.sleep(1)
+        time.sleep(2)
         print("There is a note on the chest that says: 'If you want to go and to open the chest, you must answer a riddle.'")
-        time.sleep(1)
+        print("")
+        time.sleep(2)
         print("The riddle is: 'What can run but never walks, has a mouth but never talks, has a head but never weeps, has a bed but never sleeps?'")
         print("Write your answer below:")
 
         room2_answer = input("Enter your answer: ")
 
         if room2_answer.lower() == "river":
+            print("")
             print("Correct! The chest opens and you find a coin inside.")
-            time.sleep(1)
+            time.sleep(2)
             print("You take the coin and leave the room.")
+            print("")
             coin_to_room_3 = True
             room = 'room 1'
         else:
             print("Incorrect! You have died instantly.")
-            time.sleep(1)
+            time.sleep(2)
             print("Game Over.")
-            time.sleep(1)
+            time.sleep(2)
             again = input("Do you want to play again? (yes/no): ")
             if again.lower() != "yes":
                 keys = 0
@@ -129,15 +136,15 @@ while game_running:
                 print("Thx for playing <3")
 
     elif room == 'room 3':
-        time.sleep(1)
+        time.sleep(2)
         if coin_to_room_3 == False:
             print("You don't have a coin to enter this room. You must go back to the starting room and find a coin first.")
             room = 'room 1'
 
         print("You enter the third room and find yourself in a dark corridor.")
-        time.sleep(1)
+        time.sleep(2)
         print("There is a small table with a piece of paper on it that says 'To oget the key, you must solve this math problem.'")
-        time.sleep(1)
+        time.sleep(2)
         print("The math problem is: 'What is 7 * 8 + 6 / 2 - 3?'")
         time.sleep(2)
         print("Write your answer below:")
@@ -147,14 +154,14 @@ while game_running:
         if room3_answer == "56":
             print("Correct! You have won a key.")
             keys += 1
-            time.sleep(1)
+            time.sleep(2)
             print(f"You now have {keys} key(s).")
             room = 'room 4'
         else:
             print("Incorrect! You have died instantly.")
-            time.sleep(1)
+            time.sleep(2)
             print("Game Over.")
-            time.sleep(1)
+            time.sleep(2)
             again = input("Do you want to play again? (yes/no): ")
             if again.lower() != "yes":
                 keys = 0
@@ -163,22 +170,79 @@ while game_running:
                 print("Thx for playing <3")
 
     elif room == 'room 4':
-        time.sleep(1)
+        time.sleep(2)
         print("You enter the fourth room and find yourself in a largest room you have ever seen.")
-        time.sleep(1)
+        time.sleep(2)
         print("At the end of the room, you see a wall")
-        time.sleep(1)
+        time.sleep(2)
         print("There is a note on the wall that says: 'To get the key, you must arrange the letters in an order that forms a word. Otherwise you will die!")
-        time.sleep(1)
+        time.sleep(2)
 
         word = "programming"
         mixed = "".join(random.sample(word, len(word)))
 
-        room4_answer = input(f"Arrange the letters: {mixed}")
+        room4_answer = input(f"Arrange the letters: {mixed}     ")
+        print("")
 
         if room4_answer.lower() == word:
             print("Correct! You have won a key.")
             keys += 1
-            time.sleep(1)
+            time.sleep(2)
             print(f"You now have {keys} key(s).")
+            room = 'starting2'
+
+        else:
+            print("Incorrect! You have died instantly.")
+            time.sleep(2)
+            print("Game Over.")
+            time.sleep(2)
+            again = input("Do you want to play again? (yes/no): ")
+            if again.lower() != "yes":
+                keys = 0
+                room = 'starting'
+            else:
+                print("Thx for playing <3")
+
+    elif room == 'starting2':
+        print("You have returned to the starting room.")
+        time.sleep(2)
+        print("You see the smaller doors with 3 locks again.")
+        time.sleep(2)
+        print('If you want to enter the smaller doors, enter "1". If you want to go back to the massive doors, enter "2".')
+
+        answer = input("1-2: ")
+
+        if answer == "1":
             room = 'winning room'
+        elif answer == "2":
+            room = 'room 1'
+        else:
+            print("Invalid input. Please enter '1' or '2'.")
+     
+    elif room == 'winning room':
+        time.sleep(2)
+
+        if keys == 3:
+
+            print("You insert three keys into the keyholes and turn them...")
+            time.sleep(2)
+            print("The doors open and you step inside...")
+            time.sleep(2)
+            print("You walk in and see a strange, glowing portal in the middle of a small room...")
+            time.sleep(2)
+            print("Without a second thought (since you’re already tired of it all (×_×)), you step into the portal and...")
+            time.sleep(2)
+            print("You wake up in bed in your own home, as if nothing had happened.")
+            time.sleep(2)
+            print("You look around and see that everything is normal, but you can’t shake the feeling that something is off...")
+            time.sleep(2)
+            print("Well, its probably nothing.")
+            time.sleep(2)
+            print("You have won the game!")
+
+            game_running = False
+
+        else:
+            print("You dont have enough keys to open the doors. You must go back and find more keys.")
+            room = 'starting'
+
