@@ -4,10 +4,10 @@
 #  The Game Plan :)
 #
 #      [Winning room] <- [starting room] -> [room 1] -> [room 3] -> [room 4]
-#        x coins]                            [test]      [test]
-#           |                                  |           
-#           V                                  |           
-#     [Winning room]                           V        
+#        [3 keys]                            [test]      [test]
+#           |                                 |   ^     
+#           V                                 |   |     
+#     [Winning room]                          V   |
 #                                           [room 2]           
 
 import time
@@ -55,7 +55,7 @@ while game_running:
         time.sleep(2)
         print("Also in the room, you see a table with a small machine on it.")
         time.sleep(2)
-        print('On the machine there is a note that says: "Win a coin by answering a question correctly. If you answer incorrectly, you will die instantly."')
+        print('On the machine there is a note that says: "Win a key by answering a question correctly. If you answer incorrectly, you will die instantly."')
         print("")
         time.sleep(2)
         print('If you want to answer the question, enter "1". If you want to go through the left door, enter "2". If you want to go through the right door, enter "3". If you want to turn back and go back to the starting room, enter "4".')
@@ -280,4 +280,3 @@ while game_running:
         else:
             print("You dont have enough keys to open the doors. You must go back and find more keys.")
             room = 'starting'
-
